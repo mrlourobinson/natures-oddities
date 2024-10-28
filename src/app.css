@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --background-light: #FFFAEF;
+    --background-strong: #FFD363;
+    --stroke: #B3B3B3;
+    --body-color: #383838;
+    --tinted-color: #9D9D9D;
+    --lose: #FF6365;
+    
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "liga";
+    font-variant-ligatures: common-ligatures;
+}
+
+body {
+    background-color: var(--background-light);
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--body-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    position: absolute;
+    z-index: 999;
+    top:0;
+    left:0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    opacity: 1; /* Full opacity by default */
+    transition: opacity 0.5s ease; /* Transition effect */
+}
+
+#cover {
+    background-color: var(--background-strong);
+}
+
+.cover.hidden {
+    opacity: 0; /* Hidden state with zero opacity */
+}
+
+hr {
+    max-width: 60px;
+    height: 1px;
+    color: var(--body-color);
+    background: var(--body-color);
+    font-size: 0;
+    border: 0;
+}
+
+.header {
+    width: 240px;
+    margin: auto;
+}
+
+.headline {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.headline h1 {
+    margin: 0;
+    font-size: 96px;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -3px;
+}
+
+.headline h3 {
+    margin: 0;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.enter {
+    width: 90%;
+    max-width: 200px;
+}
+
+.gap {
+    height: 70px;
+}
+
+.check-buttons {
+    margin-top: 20px;
+}
+
+.button {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 5px 20px;
+    background-color: #FFFAEF40;
+    border: 1px solid var(--body-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--background-light);
+    transition: background-color 500ms;
+}
+
+.bottom {
+    margin-bottom: 40px;
+    font-size: 13px;
+}
+
+
+
+
+#checker {
+    backdrop-filter: blur(5px);
+    background-color: rgba( 255, 255, 255, 0.5 );
+    opacity: 0;
+    pointer-events: none;
+}
+
+.popup {
+    background-color: var(--background-strong);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.popup h3 {
+    margin: 0;
+}
+
+.score-counter {
+    display: flex;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.unanswered, .win, .lose {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 1px;
+    border: 1px solid var(--tinted-color);
+}
+
+.win {
+    background-color: var(--background-strong);
+}
+
+.lose {
+    background-color: var(--lose);
+}
+
+
+
+
+
+
+
+
+
+.game-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw; /* adjust width as needed */
+    max-width: 1000px; /* optional max width */
+    margin-top: -50px;
+}
+
+.titles {
+    width: 90vw;
+    max-width: 1000px; /* optional max width */
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+}
+
+.left, .right {
+    flex-grow: 1;
+    flex-basis: 0;
+ }
+
+ .right {
+    text-align: right;
+ }
+
+.roller-area {
+    width: 100%;
+    border: 1px solid var(--stroke);
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    text-align: center;
+    overflow: hidden;
+}
+
+.roller {
+    flex: 1 1;
+}
+
+.roller h4 {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.roller p {
+    font-size: 13px;
+    color: var(--tinted-color);
+    font-style: italic;
+    margin: 10px 0;
+}
+
+
+
+.slot-machine-container {
+    width: 100%;
+    max-height: 450px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slot-images {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+  }
+
+  #left .slot-images {
+    right: 0;
+  }
+
+  .slot-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+@media screen and (max-width: 700px) {
+    .roller-area {
+        width: 155%;
+    }
+
+    .headline h1 {
+        font-size: 70px;
+    }
+    
+    .headline h3 {
+        font-size: 25px;
+    }
+
+}
